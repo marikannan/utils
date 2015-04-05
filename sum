@@ -1,0 +1,4 @@
+#/bin/sh
+#usefule to sum up the numbers in multiple lines like total size of all the files in CWD
+
+awk '{s+=$1} END {print s}' 
