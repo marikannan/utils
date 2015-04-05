@@ -1,0 +1,4 @@
+  #/bin/sh
+  # list files with long listing, reverse sorted by timestamp
+  ls -lrt $@
+  
