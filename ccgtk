@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Custome script to compile gtk program/application. This script will generate binary with the name as source name. 
+# for example, if your source file myapp.c, then binary will myapp.
+# usage : ccgtk myapp.c
+if [ $# -ne 1 ]
+then
+	echo "Usage: $0 <source_file.c>"
+	exit 1
+elif [ ! -f $1 ]
+then
+	echo "Error: File $0 doesn't exist"	
+	exit 1
+fi
+
+bname=`basename $1`
+dname=`dirname $1`
+bin_name=`basename $bname .c`
+
+echo "$bname : $dname : $bin_name "
+gcc `pkg-config --cflags gtk+-3.0` -o $dname/$bin_name $dname/$bname `pkg-config --libs gtk+-3.0`
