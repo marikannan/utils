@@ -1,0 +1,4 @@
+#/bin/sh
+
+# list directories in the current directory
+ls -lF |grep "/$"
